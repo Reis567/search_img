@@ -4,18 +4,55 @@
     font-family: 'Josefin Sans', sans-serif;
     box-sizing: border-box;
 }
-:root{
+:root {
     --primary-color: #f2e7c7;
     --secondary-color: #b7123c;
+    --tertiary-color: #bc6a79; /* Variação mais clara da cor secundária */
+    --quaternary-color: #430f21; /* Cor complementar da terciária */
+    --shadow:3px 5px 10px #430f21cc;
 }
+
 
 body{
     background: var(--primary-color);
     color: var(--secondary-color);
 }
 
-h1{
+h1 {
     text-align: center;
-    margin: 50px auto 50px;
+    margin: 50px auto;
     text-transform: capitalize;
+    text-shadow: var(--shadow); 
+}
+
+
+h1 .title{
+    color: var(--quaternary-color);
+    font-weight: bold;
+}
+
+form{
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    height: 80px;
+    background: var(--tertiary-color);
+    display: flex;
+    align-items: center;
+    
+}
+
+form input {
+    flex: 1;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    padding: 0 30px;
+}
+
+form input::placeholder {
+    color: var(--primary-color);
 }
