@@ -1,8 +1,21 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: #f2e7c7;
+    --secondary-color: #b7123c;
 }
 
 body{
-    font-family: 'Josefin Sans', sans-serif;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+h1{
+    text-align: center;
+    margin: 50px auto 50px;
+    text-transform: capitalize;
 }
