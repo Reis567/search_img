@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 :root {
+    --white-color:#ece1e4;
     --primary-color: #f2e7c7;
     --secondary-color: #b7123c;
     --tertiary-color: #bc6a79; /* Variação mais clara da cor secundária */
@@ -39,6 +40,7 @@ form{
     background: var(--tertiary-color);
     display: flex;
     align-items: center;
+    border-radius: 17px;
     
 }
 
@@ -48,11 +50,52 @@ form input {
     border: 0;
     outline: 0;
     background: transparent;
-    color: #fff;
+    color: var(--white-color);
     font-size: 18px;
     padding: 0 30px;
+    
 }
 
 form input::placeholder {
     color: var(--primary-color);
+}
+
+form button{
+    padding: 0 40px;
+    height: 100%;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 23px;
+    border: none;
+    outline: 0;
+    border-radius: 17px;
+    cursor: pointer;
+}
+
+form button:hover{
+    background: var(--quaternary-color);
+    color: var(--white-color);
+    transition: .5s;
+    cursor: pointer;
+    
+}
+
+#show-more-btn{
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 10px auto 100px;
+    cursor: pointer;
+    display: block;
+}
+
+#show-more-btn:hover{
+    background: var(--quaternary-color);
+    color: var(--white-color);
+    transition: .5s;
+    cursor: pointer;
+    
 }
