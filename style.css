@@ -41,6 +41,7 @@ form{
     display: flex;
     align-items: center;
     border-radius: 17px;
+    box-shadow: var(--shadow);
     
 }
 
@@ -70,6 +71,7 @@ form button{
     outline: 0;
     border-radius: 17px;
     cursor: pointer;
+    box-shadow: var(--shadow);
 }
 
 form button:hover{
