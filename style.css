@@ -132,3 +132,63 @@ form button:hover{
     object-fit: cover;
     border-radius: 5px;
 }
+
+/* Estilos para telas grandes */
+@media screen and (min-width: 768px) {
+    #search-result {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  /* Estilos para dispositivos móveis */
+  @media screen and (max-width: 767px) {
+    body {
+      font-size: 16px;
+    }
+  
+    h1,
+    h4 {
+      margin: 30px auto;
+    }
+  
+    form {
+      width: 90%;
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    form input::placeholder {
+        font-size: 13px; /* Tamanho menor do texto do placeholder */
+        line-height: 1.2; /* Espaçamento entre as linhas do placeholder */
+      }
+    
+  
+    form button {
+      padding: 13px;
+      font-size: 20px;
+    }
+  
+    #search-result {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      margin: 30px auto;
+      width: 90%;
+    }
+  
+    #search-result img {
+      height: auto;
+    }
+  
+    #show-more-btn {
+      margin: 20px auto;
+    }
+  }
+  
