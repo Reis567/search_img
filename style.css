@@ -133,21 +133,6 @@ form button:hover{
     border-radius: 5px;
 }
 
-.footer {
-    background: var(--secondary-color);
-    color: var(--white-color);
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-  
-  .footer-link {
-    color: var(--white-color);
-    text-decoration: none;
-  }
   
 
 /* Estilos para telas grandes */
@@ -204,8 +189,5 @@ form button:hover{
       height: auto;
     }
   
-    #show-more-btn {
-      margin: 20px auto;
-    }
   }
   
