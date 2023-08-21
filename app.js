@@ -14,44 +14,45 @@ let page = 1;
 
 // Função assíncrona para buscar e exibir imagens
 async function searchImages() {
-    // Atualiza a palavra-chave com o valor do campo de busca
     keyword = searchBox.value;
-    
-    // Monta a URL da API com os parâmetros de busca, página e chave de API
     const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${apiKey}&per_page=12`;
 
-    // Faz uma requisição à API do Unsplash usando a URL
-    const response = await fetch(url);
-    // Converte a resposta em formato JSON
-    const data = await response.json();
+    try {
+        const response = await fetch(url);
 
-    // Se a página atual for a primeira, limpa a seção de resultados
-    if (page === 1) {
+        // Verifica se a resposta não foi bem-sucedida
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+
+        if (page === 1) {
+            searchResult.innerHTML = "";
+        }
+
+        const results = data.results;
+
+        // Limpa a seção de resultados antes de adicionar novos resultados
         searchResult.innerHTML = "";
+        results.forEach((result) => {
+            const image = document.createElement("img");
+            image.src = result.urls.small;
+
+            const imageLink = document.createElement("a");
+            imageLink.href = result.links.html;
+            imageLink.target = "_blank";
+
+            imageLink.appendChild(image);
+
+            // Adiciona os elementos de imagem e link à seção de resultados
+            searchResult.appendChild(imageLink);
+        });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        // Exibe mensagem de erro para o usuário
+        searchResult.innerHTML = "An error occurred while fetching data. Please try again later.";
     }
-
-    // Exibe os dados da resposta da API no console (para fins de depuração)
-    console.log(data);
-
-    // Obtém os resultados da busca da resposta
-    const results = data.results;
-
-    // Limpa a seção de resultados antes de adicionar novos resultados
-    searchResult.innerHTML = "";
-    // Mapeia os resultados e cria elementos de imagem e link para cada um
-    results.map((result) => {
-        const image = document.createElement("img");
-        image.src = result.urls.small;
-
-        const imageLink = document.createElement("a");
-        imageLink.href = result.links.html;
-        imageLink.target = "_blank";
-
-        imageLink.appendChild(image);
-
-        // Adiciona os elementos de imagem e link à seção de resultados
-        searchResult.appendChild(imageLink);
-    });
 }
 
 // Define um ouvinte para o evento de envio do formulário de busca
