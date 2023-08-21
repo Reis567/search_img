@@ -35,6 +35,11 @@ async function searchImages() {
 
         // Limpa a seção de resultados antes de adicionar novos resultados
         searchResult.innerHTML = "";
+
+        if (results.length === 0) {
+            searchResult.innerHTML = "No results found.";
+            return; // Encerra a função, evitando a iteração vazia abaixo
+        }
         results.forEach((result) => {
             const image = document.createElement("img");
             image.src = result.urls.small;
