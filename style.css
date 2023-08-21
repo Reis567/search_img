@@ -32,6 +32,11 @@ h1 .title{
     font-weight: bold;
 }
 
+a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
 form{
     width: 90%;
     max-width: 600px;

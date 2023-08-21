@@ -9,7 +9,7 @@ let page = 1;
 
 async function searchImages() {
     keyword = searchBox.value;
-    const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${apiKey}`;
+    const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${apiKey}&per_page=12`;
 
     const response = await fetch(url);
 
@@ -30,9 +30,8 @@ async function searchImages() {
         imageLink.appendChild(image);
 
         searchResult.appendChild(imageLink);
-    }
-    
-    )
+    })
+    showMoreBtn.style.display= "block";
 }
 
 searchForm.addEventListener("submit", (e) =>{
@@ -40,3 +39,9 @@ searchForm.addEventListener("submit", (e) =>{
     page = 1;
     searchImages();
 })
+
+
+showMoreBtn.addEventListener("click" , ()=>{
+    page++;
+    searchImages();
+});
