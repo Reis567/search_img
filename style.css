@@ -25,9 +25,20 @@ h1 {
     text-transform: capitalize;
     text-shadow: var(--shadow); 
 }
+h4 {
+    text-align: center;
+    margin: 50px auto;
+    text-transform: capitalize;
+    text-shadow: var(--shadow); 
+}
 
 
 h1 .title{
+    color: var(--quaternary-color);
+    font-weight: bold;
+}
+
+h4 .by{
     color: var(--quaternary-color);
     font-weight: bold;
 }
